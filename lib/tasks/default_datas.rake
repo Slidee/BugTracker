@@ -1,13 +1,11 @@
-require 'faker'
-
 namespace :db do
   desc "Fill database with default datas"
   task :load_default_datas => :environment do
     Rake::Task['db:reset'].invoke
     admin = User.create!(:username => "admin",
                  :email => "admin.super@free.fr",
-                 :password => "admin",
-                 :password_confirmation => "admin")
+                 :password => "adminpass",
+                 :password_confirmation => "adminpass")
     admin.toggle!(:admin)
   end
 
@@ -15,8 +13,8 @@ namespace :db do
     Rake::Task['db:reset'].invoke
     admin = User.create!(:username => "admin",
                  :email => "admin.super@free.fr",
-                 :password => "admin",
-                 :password_confirmation => "admin")
+                 :password => "adminpass",
+                 :password_confirmation => "adminpass")
     admin.toggle!(:admin)
 
     99.times do |n|
