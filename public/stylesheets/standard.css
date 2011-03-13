@@ -1,0 +1,66 @@
+/*
+ 
+ *{
+  border: solid 1px brown;
+}
+*/
+.round2 {
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	-webkit-border-radius: 2px;
+  padding: 2px;
+}
+
+.round6 {
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+  padding: 5px;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.clear, .maxClear{
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  clear: both;
+  display: block;
+}
+
+.inlineList, .inlineList li, .inlineList li span{
+  display: inline;
+  list-style: none;
+}
+
+.columnLinks, .columnLinks li, .columnLinksli span{
+  display: block;
+  list-style: none;
+}
+
+.iconButton{
+  float: right;
+  margin: 2px 5px;
+  display: block;
+  padding: 2px;
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+  background: #ebebeb;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebebeb', endColorstr='#cbcbcb');
+	background: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), to(#cbcbcb));
+  background: -moz-linear-gradient(top,#ebebeb,#cbcbcb);
+  border: solid 1px #333;
+}
+.iconButton,.iconButton li, .iconButton a{
+  text-indent: -3000px;
+  text-decoration: none;
+  list-style: none;
+}

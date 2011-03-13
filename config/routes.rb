@@ -1,5 +1,14 @@
 BugTracker::Application.routes.draw do
- 
+
+  scope "/admin" do
+    resources :users
+  end
+
+
+  resources :sessions
+  match "/signin" , :to => "sessions#new"
+  match "/signout" , :to => "sessions#destroy"
+
   match "/help", :to => "pages#help"
   match "/report", :to => "pages#report"
   match "/about", :to => "pages#about"

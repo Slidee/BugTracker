@@ -1,0 +1,8 @@
+/* Marqueur fin de page (maxClear ou endPage) */
+.endPage, .maxClear{
+  page-break-after: always;
+  width:1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+}
