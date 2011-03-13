@@ -1,0 +1,10 @@
+<tr class="trBody trUser">
+  <td class="userInfos">
+    <span class="userName string"><%= link_to user.username, user %></span>
+    <span class="userMail email"> <%= link_to user.email, "mailto:"+user.email %> </span>
+  </td>
+  <td class="userActions actions">
+    <%= link_to "Delete", user, :confirm => "Are you sure ?", :method => :delete %>
+    <%= link_to "Edit", edit_user_path(user) %>
+  </td>
+</tr>

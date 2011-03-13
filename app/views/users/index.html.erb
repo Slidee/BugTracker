@@ -1,0 +1,25 @@
+<h1>Users List</h1>
+<% if @users.empty? %>
+  Aucun utilisateur trouv�
+<% else %>
+  <%= will_paginate @users %>
+  <table class="usersList" summary="Users list">
+    <thead>
+      <tr class="trHead">
+        <th>Infos</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @users.each do |user| %>
+        <%= render user %>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @users %>
+
+  <div class="listActions">
+    <%= link_to "New user", new_user_path %>
+  </div>
+<% end %>

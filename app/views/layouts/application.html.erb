@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BugTracker</title>
+  <title><%= title %></title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <div id="wrapper">
+    <%= render "layouts/header" %>
+    <div id="mainContent">
+      <%=render "layouts/sidebar" %>
 
-<%= yield %>
-
+      <%=render "layouts/flash_messages"%>
+      <div id="pageContent">
+        <%= yield %>
+      </div>
+      <div class="clear">&nbsp;</div>
+    </div>
+    <%= render "layouts/footer" %>
+  </div>
 </body>
 </html>

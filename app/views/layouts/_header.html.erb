@@ -1,0 +1,14 @@
+<div id="appHeader" class="header round6" >
+  <h2><a href="<%= root_path %>" class="headerLink" ><span>Bug Tracker</span></a></h2>
+  <ul id="userSignedMenu" class="inlineList">
+    <% if signed_in? %>
+    <li><a href="<%= signout_path %>" class="signout">Sign out</a></li>
+    <%  else %>
+    <li><a href="<%= signin_path %>" class="signin">Sign in</a></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="appMenuTop" class="topmenu">
+  <%= render "layouts/top_menu" %>
+</div>
