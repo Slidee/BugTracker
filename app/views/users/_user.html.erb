@@ -4,7 +4,7 @@
     <span class="userMail email"> <%= link_to user.email, "mailto:"+user.email %> </span>
   </td>
   <td class="userActions actions">
-    <%= link_to "Delete", user, :confirm => "Are you sure ?", :method => :delete %>
-    <%= link_to "Edit", edit_user_path(user) %>
+    <%= link_to "Delete", user, :confirm => "Are you sure ?", :method => :delete, :class => "delete objectAction" %>
+    <%= link_to "Edit", edit_user_path(user), :class => "edit objectAction" %>
   </td>
 </tr>

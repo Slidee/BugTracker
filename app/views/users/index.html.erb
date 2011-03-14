@@ -1,13 +1,13 @@
 <h1>Users List</h1>
 <% if @users.empty? %>
-  Aucun utilisateur trouv�
+  Aucun utilisateur trouv&eacute;
 <% else %>
   <%= will_paginate @users %>
-  <table class="usersList" summary="Users list">
+  <table class="usersList tableList" summary="Users list">
     <thead>
       <tr class="trHead">
         <th>Infos</th>
-        <th>Actions</th>
+        <th class="thActions">Actions</th>
       </tr>
     </thead>
     
@@ -20,6 +20,6 @@
   <%= will_paginate @users %>
 
   <div class="listActions">
-    <%= link_to "New user", new_user_path %>
+    <%= link_to "New user", new_user_path, :class => "new objectAction" %>
   </div>
 <% end %>
