@@ -1,0 +1,9 @@
+<tr class="trBody trProject">
+  <td class="projectInfos">
+    <span class="projectName string"><%= link_to project.name, :controller => "projects", :action =>"show" ,:project_slug => project.slug %></span>
+    <span class="projectDesc text"> <%= project.description %> </span>
+  </td>
+  <td class="projectActions actions">
+    Delete
+  </td>
+</tr>

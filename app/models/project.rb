@@ -1,3 +1,18 @@
+# == Schema Information
+# Schema version: 20110315204512
+#
+# Table name: projects
+#
+#  id          :integer         not null, primary key
+#  name        :string(255)
+#  slug        :string(255)
+#  logo        :string(255)
+#  description :text
+#  user_id     :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Project < ActiveRecord::Base
 
   @@reserved_names = [
@@ -13,6 +28,7 @@ class Project < ActiveRecord::Base
     "home",
     "report",
     ]
+    
   before_validation :generate_slug_from_name
   validates :name, :presence => true
 

@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   before_filter :check_authentication
   #before_filter :check_is_admin, :only => [:index]
   before_filter :check_is_admin_or_target
-  before_filter :check_taget_is_not_me, :only => :destroy
+  before_filter :check_target_is_not_me, :only => :destroy
+
   def index
     @users = User.paginate(:page => params[:page])
     @title = "Users list"
@@ -57,7 +58,7 @@ class UsersController < ApplicationController
 
   private
 
-    def check_taget_is_not_me
+    def check_target_is_not_me
       restrict_access if is_the_current_user? User.find(params[:id])
     end
 
