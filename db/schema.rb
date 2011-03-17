@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110313115615) do
+ActiveRecord::Schema.define(:version => 20110315204512) do
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.string   "logo"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["slug"], :name => "index_projects_on_slug", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "username"
