@@ -2,22 +2,23 @@
 <% if @users.empty? %>
   No Users found
 <% else %>
-  <%= will_paginate @users %>
-  <table class="usersList tableList" summary="Users list">
-    <thead>
-      <tr class="trHead">
-        <th>Infos</th>
-        <th class="thActions">Actions</th>
-      </tr>
-    </thead>
+  <div id="paginationUp" class="pagination">
+    <%= will_paginate @users %>
+  </div>
+  <ul class="usersList tableList" summary="Users list">
     
-    <tbody>
+      <li class="trHead">
+        <span class="thSpan">Infos</span>
+        <span class="thSpan thActions">Actions</span>
+      </li>
+    
       <% @users.each do |user| %>
         <%= render user %>
       <% end %>
-    </tbody>
-  </table>
-  <%= will_paginate @users %>
+  </ul>
+  <div id="paginationDown" class="pagination">
+    <%= will_paginate @users %>
+  </div>
 
   <div class="listActions">
     <%= link_to "New user", new_user_path, :class => "new objectAction" %>

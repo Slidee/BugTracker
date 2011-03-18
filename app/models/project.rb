@@ -31,14 +31,14 @@ class Project < ActiveRecord::Base
     ]
     
   before_validation :generate_slug_from_name
+  
+  ##################
+  ##### Validations
   validates :name, :presence => true
-
   project_slug_regex = /^.{1,20}$/
   validates :slug, :presence => true,
                     :format => {:with => project_slug_regex},
                     :uniqueness => {:case_sensitive => false}
-
-  #error must be on name because slug field is never shown
   validate :name , :validate_slug
 
   validates :user_id, :presence => true
