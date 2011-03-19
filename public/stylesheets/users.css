@@ -1,0 +1,15 @@
+/**
+ * LISTS
+ **/
+.tableList .userInfos{
+  width: 620px;
+}
+
+.tableList .userInfos .userName{
+  display:block
+}
+
+.tableList .userInfos .userMail{
+  display:block;
+  float:left;
+}

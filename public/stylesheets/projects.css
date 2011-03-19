@@ -1,0 +1,20 @@
+/**
+ * LISTS
+ **/
+.tableList .projectInfos, .tableList .projectInfos .contentSpan{
+  width: 200px;
+}
+
+.tableList .projectName{
+  width: 150px;
+}
+
+.tableList .projectDesc{
+  width: 300px;
+}
+
+.tableList .tdBody.projectName, .tableList .tdBody.projectDesc{
+  float: left;
+  padding-left: 5px;
+}
+

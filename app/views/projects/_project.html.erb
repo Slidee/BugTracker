@@ -1,9 +1,14 @@
 <li class="trBody trProject">
-  <div class="tdBody projectInfos">
-    <span class="projectName string"><%= link_to project.name, :controller => "projects", :action =>"show" ,:project_slug => project.slug %></span>
-    <span class="projectDesc text"> <%= project.description %> </span>
-  </div>
-  <div class="tdBody projectActions actions">
+  <div class="tdBodyOut"><input type="checkbox" /></div>
+    <span class="tdBody projectName string"><%= link_to project.name, :controller => "projects", :action =>"show" ,:project_slug => project.slug %></span>
+    <span class="tdBody projectDesc text"> <%= project.description %> </span>
+    <span class="tdBody projectInfos html">
+      <span class="objectInfos contentSpan">Owner : <%= project.user_id %></span>
+      <span class="objectInfos contentSpan">Sprints : </span>
+      <span class="objectInfos contentSpan">Tasks : </span>
+    </span>
+
+  <span class="tdBody projectActions actions">
     Delete
-  </div>
+  </span>
 </li>

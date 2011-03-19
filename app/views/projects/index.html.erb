@@ -1,20 +1,31 @@
-<h1>Projects list</h1>
-<% if @projects.empty? %>
-  No Project Found
-<% else %>
-  <ul class="projectsList tableList" summary="Projects list">
-    
-      <li class="trHead">
-        <th>Infos</th>
-        <th class="thActions">Actions</th>
-      </li>
-      <% @projects.each do |project| %>
-        <%= render project %>
-      <% end %>
-    
-  </ul>
+<div id="topContent">
+  <h1>Projects list</h1>
+</div>
 
+<div id="midleContent">
+  <% if @projects.empty? %>
+    No Project Found
+  <% else %>
+    <ul class="projectsList tableList" summary="Projects list">
+
+        <li class="trHead">
+          <span class="thSpan projectName string">Name</span>
+          <span class="thSpan projectDesc text">Description</span>
+          <span class="thSpan projectInfos html">Infos</span>
+          <span class="thSpan projectActions thActions">Actions</span>
+        </li>
+        <% @projects.each do |project| %>
+          <%= render project %>
+        <% end %>
+    </ul>
+    <div class="clear">&nbsp;</div>
+  <% end %>
+</div>
+
+<div id="bottomContent">
   <div class="listActions">
-    <%= link_to "New project", "#", :class => "new objectAction" %>
+    <%= link_to "#", :class => "new objectAction"  do%>
+      <span>New project</span>
+    <%  end %>
   </div>
-<% end %>
+</div>

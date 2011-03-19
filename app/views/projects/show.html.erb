@@ -1,2 +1,28 @@
-<h1><%= @project.name %></h1>
-Project View !
+<div id="topContent" class="topContentLarge">
+  <h1><%= @project.name %></h1>
+
+  <div class="projectShow showInfos">
+    <span class="projectDesc showDesc"><%= @project.description %></span>
+    <span class="projectSprints showCount" >Sprints : <%= @project.sprints.count %> </span>
+  </div>
+</div>
+
+<div id="midleContent">
+  <ul id="projectSprints" class="sprintsList tableList" summary="Projects list">
+      <li class="trHead">
+        <span class="thSpan sprintName string">Name</span>
+        <span class="thSpan sprintGoals text">Goals</span>
+        <span class="thSpan sprintInfos html">Infos</span>
+        <span class="thSpan sprintActions thActions">Actions</span>
+      </li>
+
+      <% @project.sprints.each do |sprint|  %>
+        <%= render sprint %>
+      <% end %>
+  </ul>
+  <div class="clear">&nbsp;</div>
+</div>
+
+<div id="bottomContent">
+  
+</div>

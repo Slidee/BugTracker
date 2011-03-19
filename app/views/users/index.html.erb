@@ -1,26 +1,35 @@
-<h1>Users List</h1>
-<% if @users.empty? %>
-  No Users found
-<% else %>
-  <div id="paginationUp" class="pagination">
-    <%= will_paginate @users %>
-  </div>
-  <ul class="usersList tableList" summary="Users list">
-    
-      <li class="trHead">
-        <span class="thSpan">Infos</span>
-        <span class="thSpan thActions">Actions</span>
-      </li>
-    
-      <% @users.each do |user| %>
-        <%= render user %>
-      <% end %>
-  </ul>
-  <div id="paginationDown" class="pagination">
-    <%= will_paginate @users %>
-  </div>
+<div id="topContent">
+  <h1>Users List</h1>
+</div>
 
+<div id="midleContent" >
+  <% if @users.empty? %>
+    No Users found
+  <% else %>
+    <div id="paginationUp" class="pagination noPrint">
+      <%= will_paginate @users %>
+    </div>
+    <ul class="usersList tableList" summary="Users list">
+
+        <li class="trHead">
+          <span class="thSpan html userInfos">Infos</span>
+          <span class="thSpan thActions userActions">Actions</span>
+        </li>
+
+        <% @users.each do |user| %>
+          <%= render user %>
+        <% end %>
+    </ul>
+    <div class="clear">&nbsp;</div>
+
+    <div id="paginationDown" class="pagination noPrint">
+      <%= will_paginate @users %>
+    </div>
+  <% end %>
+</div>
+
+<div id="bottomContent">
   <div class="listActions">
     <%= link_to "New user", new_user_path, :class => "new objectAction" %>
   </div>
-<% end %>
+</div>

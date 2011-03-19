@@ -1,0 +1,19 @@
+/**
+ * LISTS
+ **/
+.tableList .sprintInfos, .tableList .sprintInfos .contentSpan{
+  width: 200px;
+}
+
+.tableList .sprintName{
+  width: 150px;
+}
+
+.tableList .sprintGoals{
+  width: 300px;
+}
+
+.tableList .tdBody.sprintName, .tableList .tdBody.sprintGoals{
+  float: left;
+  padding-left: 5px;
+}
