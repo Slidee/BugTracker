@@ -15,7 +15,13 @@
 
 class Project < ActiveRecord::Base
   include SlugHelper
+  #######################
+  ## Relations
+  has_many :sprints
 
+  #######################
+  ## Validations
+  before_validation :generate_slug_from_name
   @@reserved_names = [
     "admin",
     "admins",
@@ -30,12 +36,12 @@ class Project < ActiveRecord::Base
     "report",
     ]
     
-  before_validation :generate_slug_from_name
+  
   
   ##################
   ##### Validations
   validates :name, :presence => true
-  project_slug_regex = /^.{1,20}$/
+  project_slug_regex = /^[a-z0-9\_\-]{1,20}$/
   validates :slug, :presence => true,
                     :format => {:with => project_slug_regex},
                     :uniqueness => {:case_sensitive => false}

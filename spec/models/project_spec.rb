@@ -60,7 +60,7 @@ describe Project do
       @project.name = "Another Name"
       @project.should be_valid
       @project.save!
-      @project.slug == old_slug
+      @project.slug.should == old_slug
     end
   end
 

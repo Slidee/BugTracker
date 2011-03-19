@@ -66,7 +66,7 @@ describe UsersController do
       it "should have an element for each user" do
         get :index
         @users[0..2].each do |user|
-          response.should have_selector("td", :content => user.username)
+          response.should have_selector("span", :content => user.username)
         end
       end
     end

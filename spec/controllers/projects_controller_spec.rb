@@ -66,7 +66,7 @@ describe ProjectsController do
       it "should have an element for each project" do
         get :index
         @projects[0..2].each do |project|
-          response.should have_selector("td", :content => project.name)
+          response.should have_selector("span", :content => project.name)
         end
       end
     end

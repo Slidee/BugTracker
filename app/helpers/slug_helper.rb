@@ -1,4 +1,5 @@
 module SlugHelper
+  
   def generate_slug_from_name
     if !self.new_record? #Si ce n'est pas
       return "toto"
