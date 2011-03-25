@@ -1,0 +1,20 @@
+<div id="taskPrioritiesBlock">
+  <h2>Task Priorities</h2>
+  <% if @task_priorities.empty? %>
+    No Task Status Found
+  <% else%>
+    <ul class="tableList taskPrioritiesList" >
+      <li class="trHead">
+        <span class="thSpan string name">Name</span>
+        <span class="thSpan integer position">Position</span>
+        <span class="thSpan actions">Actions</span>
+      </li>
+      <%  @task_priorities.each do |task_priority|%>
+        <%= render task_priority %>
+      <% end %>
+      <div class="clear"></div>
+    </ul>
+  <%  end %>
+
+  <div class="clear"></div>
+</div>

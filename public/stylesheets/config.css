@@ -1,0 +1,17 @@
+#taskStatusesBlock, #taskPrioritiesBlock{
+  width: 40%;
+  margin: 10px 45px;
+  float: left;
+}
+
+.taskPrioritiesList .trBody, .taskStatusesList .trBody{
+  width: 100%;
+}
+
+.taskPrioritiesList .trHead .thSpan, .taskStatusesList .trHead .thSpan{
+  width: 160px;
+}
+
+/*.taskPrioritiesList .actions, .taskStatusesList .actions, .taskStatusActions, .taskPriorityActions{
+  width: 110px;
+}*/

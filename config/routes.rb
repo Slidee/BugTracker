@@ -6,6 +6,7 @@ BugTracker::Application.routes.draw do
     resources :users
     resources :projects,  :only => [:index, :create]
     match "/projects/destroy/:project_slug" , :to => "projects#destroy"
+    resources :config,    :only => :index
   end
 
 

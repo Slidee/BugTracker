@@ -1,0 +1,19 @@
+<div id="taskStatusesBlock">
+  <h2>Task Statuses</h2>
+  <% if @task_statuses.empty? %>
+    No Task Status Found
+  <% else%>
+    <ul class="tableList taskStatusesList" >
+      <li class="trHead">
+        <span class="thSpan string">Name</span>
+        <span class="thSpan actions">Actions</span>
+      </li>
+      <%  @task_statuses.each do |task_status|%>
+        <%= render task_status %>
+      <% end %>
+      <div class="clear"></div>
+    </ul>
+  <%  end %>
+
+  <div class="clear"></div>
+</div>
