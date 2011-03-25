@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318195832) do
+ActiveRecord::Schema.define(:version => 20110319174252) do
 
   create_table "projects", :force => true do |t|
     t.string   "name"
@@ -36,6 +36,24 @@ ActiveRecord::Schema.define(:version => 20110318195832) do
   end
 
   add_index "sprints", ["project_id"], :name => "index_sprints_on_project_id"
+
+  create_table "task_priorities", :force => true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "task_priorities", ["position"], :name => "index_task_priorities_on_position", :unique => true
+
+  create_table "task_statuses", :force => true do |t|
+    t.string   "name"
+    t.string   "type_enum"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "task_statuses", ["type_enum"], :name => "index_task_statuses_on_type_enum"
 
   create_table "users", :force => true do |t|
     t.string   "username"

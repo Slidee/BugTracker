@@ -51,7 +51,7 @@ describe Project do
     end
 
     ######################
-    ## Later modificaitons
+    ## Slug comportments
     ######################
     it "slug should not change if i change name" do
 
@@ -62,6 +62,18 @@ describe Project do
       @project.save!
       @project.slug.should == old_slug
     end
+    
+    it "should be able to create multiple Projects with the same name, generating a different slug" do
+      slugs = []
+      8.times do |n|
+        project = Project.new(@attr)
+        project.should be_valid
+        project.save
+        slugs.include?(project.slug).should == false
+        slugs.push(project.slug)
+      end
+    end
+
   end
 
 end
